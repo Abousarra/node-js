@@ -1,10 +1,11 @@
-const http = require('http')
+const express = require('express')
 
-const server = http.createServer((req,res)=>{
-    
-    res.write('Hello all world!!!!')
-    res.end()
+const app = express()
+
+app.use((req,res)=>{
+
+    res.send('<h1>Hii monde</h1>')
 
 })
 
-server.listen(2266)
+app.listen(2266)
