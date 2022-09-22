@@ -1,10 +1,22 @@
-const express = require('express')
+const expressed = require('express')
 
-const app = express()
+const app = expressed()
 
-app.use((req,res)=>{
+app.all('/',(req,res)=>{
 
-    res.send('<h1>Hii monde</h1>')
+    res.send('<h1>Hii all</h1>')
+
+})
+
+app.use('/home',(req,res)=>{
+
+    res.send('<h1>Hii home</h1>')
+
+})
+
+app.use('/about',(req,res,next)=>{
+
+    res.send('<h1>Hii about</h1>')
 
 })
 
